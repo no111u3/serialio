@@ -1,0 +1,21 @@
+[package]
+name = "serialio"
+version = "0.1.0"
+authors = ["Boris Vinogradov <no111u3@gmail.com>"]
+description = "Serial high level operation input/output driver"
+keywords = ["no-std", "serial", "embedded-hal"]
+categories = [
+    "embedded",
+    "hardware-support",
+    "no-std",
+]
+repository = "https://github.com/no111u3/serialio"
+readme = "README.md"
+license = "Apache-2.0"
+edition = "2018"
+
+[dependencies]
+
+[dependencies.embedded-hal]
+version = "0.2.2"
+features = ["unproven"]
