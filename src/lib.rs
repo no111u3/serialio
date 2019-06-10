@@ -17,8 +17,8 @@ where TX: serial::Write<u8>,
     pub fn new(tx: TX, rx: RX) -> Self
     {
         Self {
-            tx: tx,
-            rx: rx,
+            tx,
+            rx,
         }
     }
 
