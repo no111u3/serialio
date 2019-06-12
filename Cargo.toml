@@ -20,10 +20,10 @@ edition = "2018"
 version = "0.2.2"
 features = ["unproven"]
 
-[dependencies.stm32f30x-hal]
+[dev-dependencies.stm32f30x-hal]
 version = "0.2.0"
 
-[dependencies.f3]
+[dev-dependencies.f3]
 features = ["rt"]
 version = "0.6.1"
 
