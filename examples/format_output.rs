@@ -8,9 +8,9 @@
 extern crate panic_semihosting;
 
 use cortex_m::asm;
-use stm32f30x_hal::{prelude::*, serial::Serial};
-use serialio::{SerialIO, sprintln};
 use cortex_m_rt::entry;
+use serialio::{sprintln, SerialIO};
+use stm32f30x_hal::{prelude::*, serial::Serial};
 
 use f3::hal::stm32f30x;
 

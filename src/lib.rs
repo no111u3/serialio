@@ -11,15 +11,12 @@ pub struct SerialIO<TX, RX> {
 }
 
 impl<TX, RX> SerialIO<TX, RX>
-where TX: serial::Write<u8>,
-    RX: serial::Read<u8>
+where
+    TX: serial::Write<u8>,
+    RX: serial::Read<u8>,
 {
-    pub fn new(tx: TX, rx: RX) -> Self
-    {
-        Self {
-            tx,
-            rx,
-        }
+    pub fn new(tx: TX, rx: RX) -> Self {
+        Self { tx, rx }
     }
 
     pub fn release(self) -> (TX, RX) {
@@ -28,7 +25,7 @@ where TX: serial::Write<u8>,
 
     pub fn _fmt_write(&mut self, args: fmt::Arguments) -> Result<(), fmt::Error> {
         use core::fmt::Write;
-        
+
         self.write_fmt(args)
     }
 }
@@ -51,8 +48,9 @@ macro_rules! sprintln {
 }
 
 impl<TX, RX> fmt::Write for SerialIO<TX, RX>
-where TX: serial::Write<u8>,
-    RX: serial::Read<u8>
+where
+    TX: serial::Write<u8>,
+    RX: serial::Read<u8>,
 {
     fn write_str(&mut self, s: &str) -> fmt::Result {
         for byte in s.bytes() {
